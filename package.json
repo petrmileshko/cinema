@@ -1,14 +1,17 @@
 {
-  "name": "cinemaddict",
-  "version": "17.0.0",
+  "name": "cinem",
+  "version": "1.0.0",
   "private": true,
-  "description": "Проект «{{projectTitle}}» от HTML Academy",
+  "description": "Проект «Киноман» от HTML Academy",
   "scripts": {
-    "lint": "eslint src/"
+    "lint": "eslint src/",
+    "build": "webpack --mode production"
   },
   "devDependencies": {
     "eslint": "8.13.0",
-    "eslint-config-htmlacademy": "5.1.2"
+    "eslint-config-htmlacademy": "5.1.2",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
   },
   "engines": {
     "node": "16"
