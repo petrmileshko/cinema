@@ -1,10 +1,10 @@
-console.log('Hello');
+import UserProfileView from './view/user-profile-view.js';
 
-const obj = {
-  a: {
-    b: false
-  },
-};
+import {
+  render
+} from './render.js';
 
-const c = obj?.a?.b?.c;
-console.log(c);
+const siteMainElement = document.querySelector('.main');
+const siteHeaderElement = document.querySelector('.header');
+
+render(new UserProfileView(), siteHeaderElement);
