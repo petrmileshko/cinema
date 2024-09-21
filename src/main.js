@@ -14,9 +14,9 @@ const siteHeaderElement = siteBody.querySelector('.header');
 const filmsStatisticElement = siteBody.querySelector('.footer__statistics');
 const filmsPresenter = new FilmsPresenter();
 
-render(new UserProfileView(), siteHeaderElement);
-render(new MainNavigationView(), siteMainElement);
-render(new SortView(), siteMainElement);
-render(new FooterStatisticView(), filmsStatisticElement);
+render(new UserProfileView(), siteHeaderElement); // Отрисовка информации о пользователе в шапке сайта
+render(new MainNavigationView(), siteMainElement); // отрисовка фильтра/навигации по контенту
+render(new SortView(), siteMainElement); // отрисовка сортировки контента
+render(new FooterStatisticView(), filmsStatisticElement); // отрисовка статистики в подвале
 
-filmsPresenter.init(siteMainElement);
+filmsPresenter.init(siteMainElement); // отрисовка контента
