@@ -11,11 +11,12 @@ import {
 const siteBody = document.querySelector('body');
 const siteMainElement = siteBody.querySelector('.main');
 const siteHeaderElement = siteBody.querySelector('.header');
+const filmsStatistic = siteBody.querySelector('.footer__statistics');
 const filmsPresenter = new FilmsPresenter();
 
 render(new UserProfileView(), siteHeaderElement);
 render(new MainNavigationView(), siteMainElement);
 render(new SortView(), siteMainElement);
-render(new FooterStatisticView(), siteBody.querySelector('.footer__statistics'));
+render(new FooterStatisticView(), filmsStatistic);
 
 filmsPresenter.init(siteMainElement);
