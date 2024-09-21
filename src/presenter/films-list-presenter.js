@@ -6,8 +6,8 @@ import {
 
 export default class FilmsListPresenter {
   filmsListBox = new FilmsListView();
-  filmsTopRatedBox = new FilmsListView();
-  filmsMostCommentedBox = new FilmsListView();
+  filmsTopRatedBox = new FilmsListView('RATED');
+  filmsMostCommentedBox = new FilmsListView('COMMENTED');
 
   init = (container) => {
     this.container = container;

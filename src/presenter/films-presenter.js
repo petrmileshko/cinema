@@ -13,6 +13,5 @@ export default class FilmsPresenter {
     this.container = container;
     render(this.filmsBox, this.container);
     this.filmsLists.init(this.filmsBox.getElement());
-    //console.log(this.filmsBox.getElement());
   };
 }
