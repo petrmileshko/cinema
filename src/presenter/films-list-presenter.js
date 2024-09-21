@@ -1,4 +1,5 @@
 import FilmsListView from '../view/films-list-view.js';
+import FilmsListContainerView from '../view/films-list-container-view.js';
 
 import {
   render
@@ -8,11 +9,15 @@ export default class FilmsListPresenter {
   filmsListBox = new FilmsListView();
   filmsTopRatedBox = new FilmsListView('RATED');
   filmsMostCommentedBox = new FilmsListView('COMMENTED');
+  filmsListContainer = new FilmsListContainerView();
 
   init = (container) => {
     this.container = container;
     render(this.filmsListBox, this.container);
     render(this.filmsTopRatedBox, this.container);
     render(this.filmsMostCommentedBox, this.container);
+
+    render(this.filmsListContainer, this.filmsListBox.getElement());
+
   };
 }
