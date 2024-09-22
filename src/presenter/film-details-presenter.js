@@ -7,6 +7,10 @@ import FilmDetailsContainerTopView from '../view/film-details-container-top-view
 import FilmDetailsContainerBottomView from '../view/film-details-container-bottom-view.js';
 import FilmDetailsContControlsView from '../view/film-details-controls-view.js';
 import FilmDetailsInfoView from '../view/film-details-info-view.js';
+import FilmDetailsCommentsView from '../view/film-details-comments-view.js';
+import FilmCommentsListView from '../view/film-comments-list-view.js';
+import FilmCommentsPresenter from './film-comments-presenter.js';
+
 
 import {
   render
@@ -18,6 +22,9 @@ export default class FilmDetailsPresenter {
   filmsDetailsForm = new FilmDetailsFormView(); // контейнер форма
   filmDetailsContainerTopView = new FilmDetailsContainerTopView(); // верхний контейнер
   filmDetailsContainerBottomView = new FilmDetailsContainerBottomView(); // нижний контейнер
+  filmDetailsCommentsView = new FilmDetailsCommentsView(); // контейнер с комментариями
+  filmCommentsListView = new FilmCommentsListView(); //
+  filmCommentsPresenter = new FilmCommentsPresenter(); //
 
   init = (container) => {
     this.container = container;
@@ -27,5 +34,9 @@ export default class FilmDetailsPresenter {
     render(this.filmDetailsContainerBottomView, this.filmsDetailsForm.getElement());
     render(new FilmDetailsInfoView(), this.filmDetailsContainerTopView.getElement());
     render(new FilmDetailsContControlsView(), this.filmDetailsContainerTopView.getElement());
+    render(this.filmDetailsCommentsView, this.filmDetailsContainerBottomView.getElement());
+    render(this.filmCommentsListView, this.filmDetailsCommentsView.getElement());
+
+    this.filmCommentsPresenter.init(this.filmCommentsListView.getElement());
   };
 }
