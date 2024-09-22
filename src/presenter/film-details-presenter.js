@@ -5,6 +5,8 @@ import FilmDetailsView from '../view/film-details-view.js';
 import FilmDetailsFormView from '../view/film-details-form-view.js';
 import FilmDetailsContainerTopView from '../view/film-details-container-top-view.js';
 import FilmDetailsContainerBottomView from '../view/film-details-container-bottom-view.js';
+import FilmDetailsContControlsView from '../view/film-details-controls-view.js';
+import FilmDetailsInfoView from '../view/film-details-info-view.js';
 
 import {
   render
@@ -23,5 +25,7 @@ export default class FilmDetailsPresenter {
     render(this.filmsDetailsForm, this.filmsDetailsBox.getElement());
     render(this.filmDetailsContainerTopView, this.filmsDetailsForm.getElement());
     render(this.filmDetailsContainerBottomView, this.filmsDetailsForm.getElement());
+    render(new FilmDetailsInfoView(), this.filmDetailsContainerTopView.getElement());
+    render(new FilmDetailsContControlsView(), this.filmDetailsContainerTopView.getElement());
   };
 }
