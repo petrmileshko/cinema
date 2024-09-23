@@ -10,6 +10,7 @@ import FilmDetailsInfoView from '../view/film-details-info-view.js';
 import FilmDetailsCommentsView from '../view/film-details-comments-view.js';
 import FilmCommentsListView from '../view/film-comments-list-view.js';
 import FilmCommentsPresenter from './film-comments-presenter.js';
+import FilmNewCommentView from '../view/film-new-comment-view.js';
 
 
 import {
@@ -25,6 +26,7 @@ export default class FilmDetailsPresenter {
   filmDetailsCommentsView = new FilmDetailsCommentsView(); // контейнер с комментариями
   filmCommentsListView = new FilmCommentsListView(); //
   filmCommentsPresenter = new FilmCommentsPresenter(); //
+  filmNewCommentView = new FilmNewCommentView;
 
   init = (container) => {
     this.container = container;
@@ -36,6 +38,7 @@ export default class FilmDetailsPresenter {
     render(new FilmDetailsContControlsView(), this.filmDetailsContainerTopView.getElement());
     render(this.filmDetailsCommentsView, this.filmDetailsContainerBottomView.getElement());
     render(this.filmCommentsListView, this.filmDetailsCommentsView.getElement());
+    render(this.filmNewCommentView, this.filmDetailsCommentsView.getElement());
 
     this.filmCommentsPresenter.init(this.filmCommentsListView.getElement());
   };

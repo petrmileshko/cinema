@@ -23,3 +23,4 @@ render(new FooterStatisticView(), filmsStatisticElement); // отрисовка 
 
 filmsPresenter.init(siteMainElement); // отрисовка контента
 filmsDetailsPresenter.init(siteBody); // отрисовка pop up
+
