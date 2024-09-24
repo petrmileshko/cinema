@@ -13,10 +13,14 @@ export default class FilmCardsPresenter {
     this.filmsCoumt = filmsCoumt;
   }
 
-  init = (container) => {
+  init = (container, films) => {
     this.container = container;
-    for (let index = 0; index < this.filmsCoumt; index++) {
-      render(new FilmCardView(), this.container);
-    }
+    console.log(films);
+    /*
+    for (let index = 0; index < films.length; index++) {
+      const film = films[index];
+      render(new FilmCardView(film), this.container);
+      console.log(film);
+    }*/
   };
 }

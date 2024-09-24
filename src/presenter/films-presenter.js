@@ -12,9 +12,9 @@ export default class FilmsPresenter {
   filmsBox = new FilmsBoxView(); // главная секция для списков фильмов
   filmsLists = new FilmsListPresenter(); // презентер для отрисовки всех секций со списками фильмов
 
-  init = (container) => {
+  init = (container, films) => {
     this.container = container;
     render(this.filmsBox, this.container);// Отрисовка главной секции
-    this.filmsLists.init(this.filmsBox.getElement()); // заполнение главной секции
+    this.filmsLists.init(this.filmsBox.getElement(), films); // заполнение главной секции
   };
 }

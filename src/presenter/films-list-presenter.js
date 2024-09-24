@@ -30,7 +30,7 @@ export default class FilmsListPresenter {
   filmCardsTopRated = new FilmCardsPresenter(TOP_RATED_COUNT); // Презентер для фильмов с высоким рейтингом
   filmCardsMostCommented = new FilmCardsPresenter(MOST_COMMENTED_COUNT); // Презентер для самых обсуждаемых фильмов
 
-  init = (container) => {
+  init = (container, films) => {
     this.container = container;
     /** Выводим компонент списка фильмов */
     render(this.filmsListBox, this.container);
@@ -42,7 +42,7 @@ export default class FilmsListPresenter {
     render(this.filmsMostCommentedBox, this.container);
     render(this.filmsListContainerMostCommented, this.filmsMostCommentedBox.getElement());
 
-    this.filmCards.init(this.filmsListContainer.getElement()); //Заполняем карточками контейнер для списка всех фильмов
+    this.filmCards.init(this.filmsListContainer.getElement(), films); //Заполняем карточками контейнер для списка всех фильмов
     this.filmCardsTopRated.init(this.filmsListContainerTopRated.getElement()); //Заполняем карточками контейнер для списка самых обсуждаемых фильмов
     this.filmCardsMostCommented.init(this.filmsListContainerMostCommented.getElement()); //Заполняем карточками контейнер для списка фильмов с высоким рейтингом
 

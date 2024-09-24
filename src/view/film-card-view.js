@@ -24,6 +24,11 @@ const createFilmCardTemplate = () => `
         </article>`;
 
 export default class FilmCardView {
+
+  constructor(film) {
+    this.film = film;
+  }
+
   getTemplate() {
     return createFilmCardTemplate();
   }
