@@ -11,7 +11,6 @@ import {
 } from '../render.js';
 
 import {
-  FILMS_COUNT,
   TOP_RATED_COUNT,
   MOST_COMMENTED_COUNT
 } from '../constants.js';
@@ -26,7 +25,7 @@ export default class FilmsListPresenter {
   filmsListContainerTopRated = new FilmsListContainerView(); // контейнер для фильмов из списка высокого рейтинга
   filmsListContainerMostCommented = new FilmsListContainerView(); // контейнер для фильмов из списка самых обсуждаемых
 
-  filmCards = new FilmCardsPresenter(FILMS_COUNT); // Презентер всех фильмов
+  filmCards = new FilmCardsPresenter(); // Презентер всех фильмов
   filmCardsTopRated = new FilmCardsPresenter(TOP_RATED_COUNT); // Презентер для фильмов с высоким рейтингом
   filmCardsMostCommented = new FilmCardsPresenter(MOST_COMMENTED_COUNT); // Презентер для самых обсуждаемых фильмов
 
@@ -43,8 +42,8 @@ export default class FilmsListPresenter {
     render(this.filmsListContainerMostCommented, this.filmsMostCommentedBox.getElement());
 
     this.filmCards.init(this.filmsListContainer.getElement(), films); //Заполняем карточками контейнер для списка всех фильмов
-    this.filmCardsTopRated.init(this.filmsListContainerTopRated.getElement()); //Заполняем карточками контейнер для списка самых обсуждаемых фильмов
-    this.filmCardsMostCommented.init(this.filmsListContainerMostCommented.getElement()); //Заполняем карточками контейнер для списка фильмов с высоким рейтингом
+    this.filmCardsTopRated.init(this.filmsListContainerTopRated.getElement(), films); //Заполняем карточками контейнер для списка самых обсуждаемых фильмов
+    this.filmCardsMostCommented.init(this.filmsListContainerMostCommented.getElement(), films); //Заполняем карточками контейнер для списка фильмов с высоким рейтингом
 
     render(new FilmsMoreButtonView(), this.filmsListBox.getElement()); // Отрисовка компонента с кнопкой показать больше фильмов
   };

@@ -1,12 +1,14 @@
 import {
   generateFilm
-} from "../mock/film.js";
+} from '../mock/film.js';
 
 export default class FilmsModel {
-  _films = Array.from({
-    length: 3
-  }, generateFilm);
 
+  constructor(count) {
+    this._films = Array.from({
+      length: count
+    }, generateFilm);
+  }
 
   get films() {
     return this._films;

@@ -9,18 +9,22 @@ import {
 
 export default class FilmCardsPresenter {
 
-  constructor(filmsCoumt = 0) {
-    this.filmsCoumt = filmsCoumt;
+  constructor(count = 0) {
+    this._count = count;
   }
 
   init = (container, films) => {
     this.container = container;
-    console.log(films);
-    /*
-    for (let index = 0; index < films.length; index++) {
-      const film = films[index];
-      render(new FilmCardView(film), this.container);
-      console.log(film);
-    }*/
+
+    if (!this._count) {
+      for (const film of films) {
+        render(new FilmCardView(film), container);
+      }
+    } else {
+      for (let index = 0; index < this._count; index++) {
+        render(new FilmCardView(films[index]), container);
+      }
+    }
+
   };
 }
