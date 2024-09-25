@@ -15,6 +15,16 @@ function getRandomElement(elements) {
   return elements[getRandomNumber(0, elements.length - 1)];
 }
 
+function getRandomFloat(min, max, decimals = 1) {
+
+  if (min === max) {
+    return min;
+  }
+  const from = Math.min(Math.abs(min), Math.abs(max));
+  const till = Math.max(Math.abs(min), Math.abs(max));
+  return (Math.random() * (till - from + 1) + from).toFixed(decimals);
+}
+
 // Проверка длины введенной строки на соблюдение условия не более max
 function validateTextLength(text, max) {
   if (text === '' || text === null || text === undefined || max < 1 || typeof (text) !== 'string') {
@@ -25,6 +35,7 @@ function validateTextLength(text, max) {
 
 export {
   getRandomNumber,
+  getRandomFloat,
   validateTextLength,
   getRandomElement,
 };
