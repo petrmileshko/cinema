@@ -6,6 +6,29 @@ import {
   convertDate
 } from '../utils/utils';
 
+const titlesStorage = [
+  'Country On Him',
+  'Raiders With The Carpet',
+  'Guest Who Sold The Darkness',
+  'A Tale Of A Little Bird In The Storm',
+  'Friends On The Room',
+  'Raiders Who Stole Us',
+  'Friends Without Themselves',
+  'Pioneers Without Us',
+  'A Man With Themselves',
+  'Guest With The Darkness',
+  'A Little Pony Who Bought The Darkness',
+  'Family Who Bought The Carpet',
+  'Raiders Who Saw Him',
+  'Guest Within Him',
+  'Pioneers Without The Darkness',
+  'A Tale Of A Little Bird With Him',
+  'A Shark Who Sold The Wall',
+  'Raiders Who The Storm',
+  'Family Who Stole The Darkness',
+  'A Lion Without Us',
+];
+
 const descriptionsStorage = [
   'Oscar-winning film, a war drama about two young people, from the creators of timeless classic \'Nu, Pogodi!\' and \'Alice in Wonderland\', with the best fight scenes since Bruce Lee.',
   'Sentenced for a murder he did not commit, John Brant escapes from prison determined to find the real killer. By chance Brant\'s narrow escapape.m prison determined to find the real killer.',
@@ -38,10 +61,16 @@ const genreStorage = [
   'Western',
   'Cartoon',
   'Romantic',
+  'Animation',
+  'Action',
+  'Adventure',
+  'Family',
+  'Horror',
+  'Thriller',
 ];
 
 export const generateFilm = () => ({
-  title: 'A Little Pony Without The Carpet',
+  title: getRandomElement(titlesStorage),
   alternativeTitle: 'Laziness Who Sold Themselves',
   totalRating: getRandomFloat(1, 9, 1),
   poster:  getRandomElement(postersStorage),
