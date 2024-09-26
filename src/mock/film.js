@@ -29,6 +29,21 @@ const titlesStorage = [
   'A Lion Without Us',
 ];
 
+const namesStorage = [
+  'Alice',
+  'Makoveev',
+  'Sergey',
+  'Ivanov',
+  'Ivan',
+  'Romanov',
+  'Dakota',
+  'Lee',
+  'Nevada',
+  'James',
+  'Fedor',
+  'Walker'
+];
+
 const descriptionsStorage = [
   'Oscar-winning film, a war drama about two young people, from the creators of timeless classic \'Nu, Pogodi!\' and \'Alice in Wonderland\', with the best fight scenes since Bruce Lee.',
   'Sentenced for a murder he did not commit, John Brant escapes from prison determined to find the real killer. By chance Brant\'s narrow escapape.m prison determined to find the real killer.',
@@ -75,12 +90,12 @@ export const generateFilm = () => ({
   totalRating: getRandomFloat(1, 9, 1),
   poster:  getRandomElement(postersStorage),
   ageRating: 0,
-  director: 'Tom Ford',
+  director: `${getRandomElement(namesStorage)} ${getRandomElement(namesStorage)}`,
   writers: [
-    'Takeshi Kitano'
+    `${getRandomElement(namesStorage)} ${getRandomElement(namesStorage)}`,
   ],
   actors: [
-    'Morgan Freeman'
+    `${getRandomElement(namesStorage)} ${getRandomElement(namesStorage)}`,
   ],
   release: {
     date: convertDate( `${getRandomNumber(1980,2024)}-03-${getRandomNumber(10,30)}T00:00:00.000Z` ),
