@@ -1,3 +1,5 @@
+import dayjs from 'dayjs';
+
 // Получение случайного числа из диапазона между min и max включительно
 function getRandomNumber(min, max) {
 
@@ -33,9 +35,14 @@ function validateTextLength(text, max) {
   return text.length <= max;
 }
 
+function convertDate(date) {
+  return dayjs(date).format('YYYY');
+}
+
 export {
   getRandomNumber,
   getRandomFloat,
   validateTextLength,
   getRandomElement,
+  convertDate
 };

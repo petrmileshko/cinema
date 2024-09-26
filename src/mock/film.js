@@ -1,6 +1,8 @@
 import {
   getRandomElement,
-  getRandomFloat
+  getRandomFloat,
+  getRandomNumber,
+  convertDate
 } from '../utils/utils';
 
 const descriptionsStorage = [
@@ -19,6 +21,24 @@ const postersStorage = [
   './images/posters/popeye-meets-sinbad.png'
 ];
 
+const countryStorage = [
+  'Finland',
+  'England',
+  'USA',
+  'USSR',
+  'Italy',
+  'France',
+];
+
+const genreStorage = [
+  'Comedy',
+  'Drama',
+  'Musical',
+  'Western',
+  'Cartoon',
+  'Romantic',
+];
+
 export const generateFilm = () => ({
   title: 'A Little Pony Without The Carpet',
   alternativeTitle: 'Laziness Who Sold Themselves',
@@ -33,12 +53,12 @@ export const generateFilm = () => ({
     'Morgan Freeman'
   ],
   release: {
-    date: '2019-05-11T00:00:00.000Z',
-    releaseCountry: 'Finland'
+    date: convertDate( `${getRandomNumber(1980,2024)}-03-${getRandomNumber(10,30)}T00:00:00.000Z` ),
+    releaseCountry: getRandomElement(countryStorage)
   },
   runtime: 77,
   genre: [
-    'Comedy'
+    getRandomElement(genreStorage)
   ],
   description: getRandomElement(descriptionsStorage)
 });
