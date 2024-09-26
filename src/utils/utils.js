@@ -39,10 +39,15 @@ function convertDate(date) {
   return dayjs(date).format('YYYY');
 }
 
+function convertMinutesToTime(min) {
+  const minutesString = (min < 60) ? `${min}m` : `${Math.floor(min / 60)}h ${min % 60}m`;
+  return minutesString;
+}
 export {
   getRandomNumber,
   getRandomFloat,
   validateTextLength,
   getRandomElement,
+  convertMinutesToTime,
   convertDate
 };

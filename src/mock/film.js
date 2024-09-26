@@ -2,6 +2,7 @@ import {
   getRandomElement,
   getRandomFloat,
   getRandomNumber,
+  convertMinutesToTime,
   convertDate
 } from '../utils/utils';
 
@@ -56,7 +57,7 @@ export const generateFilm = () => ({
     date: convertDate( `${getRandomNumber(1980,2024)}-03-${getRandomNumber(10,30)}T00:00:00.000Z` ),
     releaseCountry: getRandomElement(countryStorage)
   },
-  runtime: 77,
+  runtime: convertMinutesToTime(getRandomNumber(45,180)),
   genre: [
     getRandomElement(genreStorage)
   ],
